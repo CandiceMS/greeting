@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Greetings</title>
+    <link rel="stylesheet" href="css/index-grid.css">
+    <link rel="stylesheet" href="css/greet.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>GREETINGS</h1>
+      </div>
+      <div class="row" style="background-color: pink">
+        <label for="inputName">Please Enter Name</label>
+        <input type="text" name="inputName" value="" class="nameBox" style="background-color: lightblue">
+      </div>
+      <div class="row" style="background-color: lightblue">
+        <button type="button" name="greetMe" class="buttons">Greet Me</button>
+      </div>
+      <div class="row displayGreeting" style="background-color: lavender">
+        <strong>Hello</strong><output name="greetingResult"></output>    
+      </div>
+    </div>
+    <script src="greet.js" charset="utf-8"></script>
+    <script src="greet_dom.js" charset="utf-8"></script>
+  </body>
+</html>
