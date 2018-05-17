@@ -1,6 +1,6 @@
 .container {
   width: 80%;
-  height: 40%;
+  height: 50%;
   line-height: 3rem;
   margin: 4%;
   padding: 2%;
@@ -29,4 +29,7 @@
   text-indent: 22rem;
   line-height: 4.5rem;
   font-size: 2.5rem;
+}
+.languages {
+  margin-left: 160px;
 }
