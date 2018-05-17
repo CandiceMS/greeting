@@ -4,5 +4,6 @@ var greetMeDisplay = document.querySelector('output[name="greetingResult"]');
 
 function greetDom() {
   greetMeDisplay.innerHTML = greet(nameBox.value);
+  nameBox.value = "";
 }
 greetMe.addEventListener('click', greetDom);
