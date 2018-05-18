@@ -15,8 +15,10 @@ function greetDom() {
         languages[i].checked = false;
     }
   }
+  
   greetMeDisplay.innerHTML = greetings(checkedBtn, nameBox.value);
   nameBox.value = "";
   countNames.innerHTML = greetCount;
+
   }
 greetMe.addEventListener('click', greetDom);

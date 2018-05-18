@@ -1,5 +1,5 @@
 var greetCount = 0;
-var namesList = "";
+var namesList = [];
 
 function greetings(checkedLanguage, greetName) {
   var name = greetName;
@@ -17,6 +17,8 @@ function greetings(checkedLanguage, greetName) {
 
       if (greetName !== "") {
       greetCount += 1;
+      namesList.push(name);
     }
+    console.log(namesList);
       return greet+name;
     }
