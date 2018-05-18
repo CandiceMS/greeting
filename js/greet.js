@@ -1,3 +1,6 @@
+var greetCount = 0;
+var namesList = "";
+
 function greetings(checkedLanguage, greetName) {
   var name = greetName;
   var greet = '';
@@ -12,5 +15,8 @@ function greetings(checkedLanguage, greetName) {
         greet = "Bonjour "
       }
 
+      if (greetName !== "") {
+      greetCount += 1;
+    }
       return greet+name;
-}
+    }

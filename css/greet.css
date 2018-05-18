@@ -1,6 +1,6 @@
 .container {
-  width: 80%;
-  height: 50%;
+  width: 90%;
+  height: 60%;
   line-height: 3rem;
   margin: 4%;
   padding: 2%;
@@ -18,18 +18,26 @@
   border-style: groove;
 }
 .buttons {
-  margin-top: 3px;
+  vertical-align: top;
   padding: 3px;
   margin-left: 10rem;
+  margin-right: 3rem;
   width: 6rem;
   font-size: 16px;
 }
 
 .displayGreeting {
-  text-indent: 22rem;
-  line-height: 4.5rem;
-  font-size: 2.5rem;
+  padding-left: 10%;
+  font-size: 3rem;
 }
 .languages {
   margin-left: 160px;
+}
+
+.counter {
+  float: right;
+}
+.count {
+  padding-left: 4.5rem;
+  font-size: 34px;
 }

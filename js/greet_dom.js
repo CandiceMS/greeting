@@ -3,6 +3,9 @@ var greetMe = document.querySelector('.buttons');
 var languages = document.querySelectorAll('.languages');
 var greetMeDisplay = document.querySelector('output[name="greetingResult"]');
 
+var countNames = document.querySelector('output[name="countResult"]');
+// console.log(countNames);
+
 function greetDom() {
   var checkedBtn = '';
 
@@ -14,5 +17,6 @@ function greetDom() {
   }
   greetMeDisplay.innerHTML = greetings(checkedBtn, nameBox.value);
   nameBox.value = "";
+  countNames.innerHTML = greetCount;
   }
 greetMe.addEventListener('click', greetDom);
