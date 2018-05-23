@@ -17,9 +17,10 @@ function greetDom() {
   for (var i = 0; i < languages.length; i++) {
     if (languages[i].checked) {
       checkedBtn = languages[i].value;
+      languages[i].checked = false;
     }
   }
-
+  greetings.assignName();
   greetMeDisplay.innerHTML = greetings.greetPerson(checkedBtn, nameBox.value);
   nameBox.value = "";
   countNames.innerHTML = greetCount;

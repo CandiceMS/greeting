@@ -1,86 +1,54 @@
 var greetCount = 0;
-var namesList = [];
 
-function Greetings(checkedLanguage, greetName) {
-  var greet = '';
+function Greetings(checkedLanguage, name) {
 
-  if (greetName !== "") {
-    namesList.push(greetName);
-  }
+  var storeCounter = 0;
 
-  // var foundTheName = false;
-  // for (var i = 0; i < namesList.length; i++) {
-  //   if (namesList[i] === greetName) {
-  //     foundTheName = true;
-  //     break;
-  //   }
-  // }
-  // if (!foundTheName){
-  //     namesList.push(greetName);
-  // }
-  console.log(namesList);
+  function assignName(name) {
+    var namesList= [];
 
-  function greetPerson(checkedLanguage, greetName) {
-    if (checkedLanguage === "english") {
-      greet = "Hello "
-    } else if (checkedLanguage === "sesotho") {
-      greet = "Dumela "
-    } else if (checkedLanguage === "french") {
-      greet = "Bonjour "
+    if (name !== "") {
+      namesList.push(name);
+      greetCount += 1;
     }
-    return greet + greetName;
+    for (var i = 0; i < namesList.length; i++) {
+      if (namesList[i].includes(name) == false) {
+        namesList.push(name);
+        greetCount += 1;
+      //  break;
+      }
+      // if (namesList[i] !== name) {
+      //   namesList.push(name);
+      // }
+    }
+      return namesList;
+    console.log(namesList);
   }
 
-  function greetCounter() {
+
+
+
+  function counter() {
     namesList.length = greetCount;
   }
 
-  return {
-    greetPerson,
-    greetCounter
+  function greetPerson(checkedLanguage, name) {
+    var greet = '';
+    if (checkedLanguage === "english") {
+      greet = "Hello ";
+    }
+    if (checkedLanguage === "sesotho") {
+      greet = "Dumela ";
+    }
+    if (checkedLanguage === "french") {
+      greet = "Bonjour ";
+    }
+    return greet + name;
   }
+
+
+return {
+  assignName,
+  greetPerson
 }
-
-
-
-
-  // for (var i = 0; i < namesList.length; i++) {
-  //   if (namesList[i] !== name) {
-  //     namesList.push(name);
-  //     greetCount += 1;
-  //   } else if (namesList[i] == name) {
-  //     !namesList.push(name);
-  //   }
-  // }
-  // console.log(namesList);
-  //
-
-
-//    function counterNames() {
-// for (var i = 0; i < namesList.length; i++) {
-//   if (namesList[i] !== name) {
-//     namesList.push(name);
-//     greetCount += 1;
-//   }
-//   else if (namesList[i] == name) {
-//     !namesList.push(name);
-//     return greetCount;
-//   }
-// }
-//  }
-
-//    function counterNames() {
-// for (var i = 0; i < namesList.length; i++) {
-//   if (namesList[i] !== name) {
-//     namesList.push(name);
-//     greetCount += 1;
-//   }
-//   else if (namesList[i] == name) {
-//     !namesList.push(name);
-//   }
-// }
-//  console.log(namesList);
-//  }
-
-//return greetPerson;
-//}
+}
