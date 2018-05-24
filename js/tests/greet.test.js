@@ -16,10 +16,22 @@ describe('Greet Me', function(){
       var frenchYegan = Greetings();
         assert.equal(frenchYegan.greetPerson('french','Yegan'), "Bonjour Yegan");
     });
-    // it('should count how many people have been greeted', function(){
-    //     assert.equal(greetings('', 2), 2);
-    // });
-    // it('should NOT increment counter if no name has been entered', function(){
-    //     assert.equal(greetings('',''), 0);
-    // });
-});
+     it('should count how many people have been greeted as 3', function(){
+       var generalCount = Greetings();
+          generalCount.assignName('Andrew');
+          generalCount.assignName('Candice');
+          generalCount.assignName('Taslin');
+
+          generalCount.counter();
+        assert.equal(3, greetCount);
+     });
+     it('should NOT increment counter if the same name has been entered before', function(){
+       var noCount = Greetings();
+          noCount.assignName('Nathri');
+          noCount.assignName('Yegan');
+          noCount.assignName('Nathri');
+
+          noCount.counter();
+        assert.equal(2, greetCount);
+     });
+   });

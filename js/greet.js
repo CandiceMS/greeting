@@ -1,35 +1,22 @@
 var greetCount = 0;
 
 function Greetings(checkedLanguage, name) {
-
-  var storeCounter = 0;
+  var map = {};
 
   function assignName(name) {
-    var namesList= [];
-
-    if (name !== "") {
-      namesList.push(name);
-      greetCount += 1;
+    if (map[name] === undefined){
+      map[name] = 0;
     }
-    for (var i = 0; i < namesList.length; i++) {
-      if (namesList[i].includes(name) == false) {
-        namesList.push(name);
-        greetCount += 1;
-      //  break;
+    for (var name in map) {
+      if (map[name] !== name) {
+        map[name] = 0;
       }
-      // if (namesList[i] !== name) {
-      //   namesList.push(name);
-      // }
     }
-      return namesList;
-    console.log(namesList);
+  console.log(map);
   }
 
-
-
-
-  function counter() {
-    namesList.length = greetCount;
+function counter() {
+  greetCount = Object.keys(map).length;
   }
 
   function greetPerson(checkedLanguage, name) {
@@ -49,6 +36,7 @@ function Greetings(checkedLanguage, name) {
 
 return {
   assignName,
-  greetPerson
+  greetPerson,
+  counter
 }
 }

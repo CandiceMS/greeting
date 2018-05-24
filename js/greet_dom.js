@@ -20,9 +20,11 @@ function greetDom() {
       languages[i].checked = false;
     }
   }
-  greetings.assignName();
+
+  greetings.assignName(nameBox.value);
   greetMeDisplay.innerHTML = greetings.greetPerson(checkedBtn, nameBox.value);
   nameBox.value = "";
+  greetings.counter();
   countNames.innerHTML = greetCount;
 
 }
