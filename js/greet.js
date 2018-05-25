@@ -27,9 +27,11 @@ function Greetings(checkedLanguage, name) {
     }
     else if (name === "") {
         return "Please enter your name!"
+//change return string response. This one is for testing purposes.
     }
     else if (!checkedLanguage) {
       return "Please select a language!"
+//change return string response. This one is for testing purposes.
     }
     else {
       return "";
