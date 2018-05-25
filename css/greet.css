@@ -30,6 +30,9 @@
   padding-left: 10%;
   font-size: 3rem;
 }
+.alertDisplay {
+  color: #11990a;
+}
 .languages {
   margin-left: 160px;
 }

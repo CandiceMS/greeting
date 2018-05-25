@@ -18,20 +18,37 @@ describe('Greet Me', function(){
     });
      it('should count how many people have been greeted as 3', function(){
        var generalCount = Greetings();
-          generalCount.assignName('Andrew');
-          generalCount.assignName('Candice');
-          generalCount.assignName('Taslin');
+          generalCount.assignName(true, 'Andrew');
+          generalCount.assignName(true, 'Candice');
+          generalCount.assignName(true, 'Taslin');
 
           generalCount.counter();
         assert.equal(3, greetCount);
      });
      it('should NOT increment counter if the same name has been entered before', function(){
        var noCount = Greetings();
-          noCount.assignName('Nathri');
-          noCount.assignName('Yegan');
-          noCount.assignName('Nathri');
+          noCount.assignName(true, 'Nathri');
+          noCount.assignName(true, 'Yegan');
+          noCount.assignName(true, 'Nathri');
 
           noCount.counter();
         assert.equal(2, greetCount);
+     });
+     it('should count how many people have been greeted as 2 because greeting is incomplete', function(){
+       var confirmCount = Greetings();
+          confirmCount.assignName(true, 'Andrew');
+          confirmCount.assignName(true, '');
+          confirmCount.assignName(false, 'Taslin');
+
+          confirmCount.counter();
+        assert.equal(1, greetCount);
+     });
+     it('should return an alert message because no name input has been entered', function(){
+       var alertName = Greetings();
+        assert.equal(alertName.alert("", "english"), "Please enter your name!");
+     });
+     it('should return an alert message because no language has been selected', function(){
+       var alertRadio = Greetings();
+        assert.equal(alertRadio.alert("Candice", ""), "Please select a language!");
      });
    });

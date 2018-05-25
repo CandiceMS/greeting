@@ -1,4 +1,5 @@
 var nameBox = document.querySelector('.nameBox');
+var displayAlert = document.querySelector('output[name="alertName"]');
 var greetMe = document.querySelector('.buttons');
 // var language = document.querySelector("input[name='language']:checked");
 //console.log(language);
@@ -21,11 +22,14 @@ function greetDom() {
     }
   }
 
-  greetings.assignName(nameBox.value);
+  greetings.alert(nameBox.value, checkedBtn);
+  displayAlert.innerHTML = "";
+  greetings.assignName(checkedBtn, nameBox.value);
   greetMeDisplay.innerHTML = greetings.greetPerson(checkedBtn, nameBox.value);
-  nameBox.value = "";
+  displayAlert.innerHTML=greetings.alert(nameBox.value, checkedBtn);
   greetings.counter();
   countNames.innerHTML = greetCount;
+  nameBox.value = "";
 
 }
 greetMe.addEventListener('click', greetDom);
