@@ -1,9 +1,6 @@
 var nameBox = document.querySelector('.nameBox');
 var displayAlert = document.querySelector('output[name="alertName"]');
 var greetMe = document.querySelector('.buttons');
-// var language = document.querySelector("input[name='language']:checked");
-//console.log(language);
-//  var selectedLanguage = language.value;
 var languages = document.querySelectorAll('.languages');
 var greetMeDisplay = document.querySelector('output[name="greetingResult"]');
 
