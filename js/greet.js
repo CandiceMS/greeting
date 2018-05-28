@@ -1,8 +1,7 @@
 var greetCount = 0;
 
 function Greetings(checkedLanguage, name) {
-  var map = {};
-
+var map = {};
   function assignName(checkedLanguage, name) {
     if (name !== '' && checkedLanguage) {
       if (map[name] === undefined){
@@ -15,10 +14,16 @@ function Greetings(checkedLanguage, name) {
       }
     }
   console.log(map);
+
+  }
+
+  function returnMap() {
+    return map;
   }
 
   function counter() {
     greetCount = Object.keys(map).length;
+    return greetCount;
     }
 
   function alert(name, checkedLanguage) {
@@ -59,6 +64,7 @@ function Greetings(checkedLanguage, name) {
 
 return {
   assignName,
+  returnMap,
   greetPerson,
   counter,
   alert

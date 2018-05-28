@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/index-grid.css">
     <link rel="stylesheet" href="css/greet.css">
   </head>
-  <body>
+  <body onload="onLoad">
     <div class="container">
       <div class="row">
         <h1>GREETINGS</h1>
@@ -51,6 +51,9 @@
       <div class="row counter">
         <label for="countResult">Number Of Names Greeted:</label><br>
         <strong><output class="count" name="countResult" type="number"></output></strong>
+      </div>
+      <div class="row">
+        <button type="button" name="resetBtn" class="buttons">Reset Counter</button>
       </div>
     </div>
     <script src="js/greet.js" charset="utf-8"></script>
