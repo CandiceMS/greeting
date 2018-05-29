@@ -16,14 +16,15 @@ describe('Greet Me', function(){
       var frenchYegan = Greetings();
         assert.equal(frenchYegan.greetPerson('french','Yegan'), "Bonjour Yegan");
     });
-     it('should count how many people have been greeted as 3, given a map for manipulation', function(){
+     it('should count how many people have been greeted as 3', function(){
        var generalCount = Greetings();
-          // generalCount.assignName(true, 'Andrew');
-          // generalCount.assignName(true, 'Candice');
-          // generalCount.assignName(true, 'Taslin');
+          generalCount.assignName(true, 'Andrew');
+          generalCount.assignName(true, 'Candice');
+          generalCount.assignName(true, 'Taslin');
 
-          //
-        assert.equal(3, generalCount.counter({"Andrew":0, "Candice":0, "Nathri":0}));
+        assert.equal(3, generalCount.counter());
+        //  given a map for manipulation
+        // {"Andrew":0, "Candice":0, "Nathri":0}
      });
      it('should NOT increment counter if the same name has been entered before', function(){
        var noCount = Greetings();
