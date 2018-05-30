@@ -6,18 +6,7 @@ var greetMeDisplay = document.querySelector('output[name="greetingResult"]');
 var countNames = document.querySelector('output[name="countResult"]');
 var reset = document.querySelector('button[name="resetBtn"]');
 
-var storage = JSON.parse(localStorage.getItem('holdCount'));
-
 var greetings = Greetings();
-
-var holdMap = greetings.returnMap('holdCount');
-localStorage.setItem('holdCount', JSON.stringify(holdMap));
-
-function onLoad() {
-
-//   localStorage.holdCount;
-   countNames.innerHTML = greetings.counter();
-}
 
 function greetDom() {
   var checkedBtn = '';
@@ -33,15 +22,22 @@ function greetDom() {
   displayAlert.innerHTML = "";
   greetings.assignName(checkedBtn, nameBox.value);
   greetMeDisplay.innerHTML = greetings.greetPerson(checkedBtn, nameBox.value);
-  displayAlert.innerHTML=greetings.alert(nameBox.value, checkedBtn);
+  displayAlert.innerHTML = greetings.alert(nameBox.value, checkedBtn);
   nameBox.value = "";
 
-   var holdMap = greetings.returnMap();
-   localStorage.setItem('holdCount', JSON.stringify(holdMap));
+  countNames.innerHTML = greetings.counter(holdMap);
 
-  //greetings.counter();
-  countNames.innerHTML = greetings.counter();
+  var holdMap = greetings.returnMap();
+  localStorage.setItem("map",JSON.stringify(holdMap));
+
+  console.log(localStorage.getItem("map"));
+  return holdMap;
 }
+
+ var holdMap  = JSON.parse(localStorage.getItem('map'));
+ console.log(holdMap);
+
+ countNames.innerHTML = greetings.counter(holdMap);
 
 function resetCount() {
   localStorage.clear();
