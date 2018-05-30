@@ -22,7 +22,7 @@ describe('Greet Me', function(){
           generalCount.assignName(true, 'Candice');
           generalCount.assignName(true, 'Taslin');
 
-        assert.equal(3, generalCount.counter());
+        assert.equal(3, generalCount.counter(generalCount.returnMap()));
         //  given a map for manipulation
         // {"Andrew":0, "Candice":0, "Nathri":0}
      });
@@ -32,7 +32,7 @@ describe('Greet Me', function(){
           noCount.assignName(true, 'Yegan');
           noCount.assignName(true, 'Nathri');
 
-          noCount.counter();
+          noCount.counter(noCount.returnMap());
         assert.equal(2, greetCount);
      });
      it('should count how many people have been greeted as 2 because greeting is incomplete', function(){
@@ -41,7 +41,7 @@ describe('Greet Me', function(){
           confirmCount.assignName(true, '');
           confirmCount.assignName(false, 'Taslin');
 
-          confirmCount.counter();
+          confirmCount.counter(confirmCount.returnMap());
         assert.equal(1, greetCount);
      });
      it('should return an alert message because no name input has been entered', function(){
