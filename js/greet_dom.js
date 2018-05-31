@@ -6,8 +6,6 @@ var greetMeDisplay = document.querySelector('output[name="greetingResult"]');
 var countNames = document.querySelector('output[name="countResult"]');
 var reset = document.querySelector('button[name="resetBtn"]');
 
-var greetings = Greetings();
-
 function greetDom() {
   var checkedBtn = '';
 
@@ -17,32 +15,29 @@ function greetDom() {
       languages[i].checked = false;
     }
   }
-
   greetings.alert(nameBox.value, checkedBtn);
   displayAlert.innerHTML = "";
   greetings.assignName(checkedBtn, nameBox.value);
   greetMeDisplay.innerHTML = greetings.greetPerson(checkedBtn, nameBox.value);
   displayAlert.innerHTML = greetings.alert(nameBox.value, checkedBtn);
   nameBox.value = "";
-
-  countNames.innerHTML = greetings.counter(holdMap);
+  countNames.innerHTML = greetings.counter();
 
   var holdMap = greetings.returnMap();
-  localStorage.setItem("map",JSON.stringify(holdMap));
-
-  console.log(localStorage.getItem("map"));
-  return holdMap;
+  localStorage.setItem("localMap",JSON.stringify(holdMap));
 }
 
- var holdMap  = JSON.parse(localStorage.getItem('map'));
- console.log(holdMap);
+var holdMap  = localStorage.getItem('localMap') ? JSON.parse(localStorage.getItem('localMap')):{};
+var greetings = Greetings(holdMap);
 
- countNames.innerHTML = greetings.counter(holdMap);
+  greetings.storeMap();
+  countNames.innerHTML = greetings.counter();
 
 function resetCount() {
   localStorage.clear();
-  countNames.innerHTML = "";
-  greetMeDisplay.innerHTML = "";
+  location.reload();
+  // countNames.innerHTML = "";
+  // greetMeDisplay.innerHTML = "";
 }
 
 greetMe.addEventListener('click', greetDom);

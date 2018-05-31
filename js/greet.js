@@ -1,8 +1,16 @@
 var greetCount = 0;
 
-function Greetings() {
+function Greetings(storedMap) {
 var map = {};
+
+  function storeMap(){
+    if (storedMap) {
+      map = storedMap;
+    }
+  }
+
   function assignName(checkedLanguage, name) {
+  storeMap();
     if (name !== '' && checkedLanguage) {
       if (map[name] === undefined){
         map[name] = 0;
@@ -21,7 +29,7 @@ var map = {};
     return map;
   }
 
-  function counter(map) {
+  function counter() {
     greetCount = Object.keys(map).length;
     return greetCount;
     }
@@ -63,6 +71,7 @@ var map = {};
   }
 
 return {
+  storeMap,
   assignName,
   returnMap,
   greetPerson,
