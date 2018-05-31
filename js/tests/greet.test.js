@@ -52,4 +52,9 @@ describe('Greet Me', function(){
        var alertRadio = Greetings();
         assert.equal(alertRadio.alert("Candice", ""), "Please select a language!");
      });
+     it('should return the local storage map as input to the Factory Function', function(){
+       var storageCheck = Greetings({"Bob":0, "Bill":0,});
+        storageCheck.storeMap();
+        assert.deepEqual(storageCheck.returnMap(), {"Bob":0, "Bill":0,});
+     });
    });

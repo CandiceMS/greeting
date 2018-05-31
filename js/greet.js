@@ -9,8 +9,10 @@ var map = {};
     }
   }
 
-  function assignName(checkedLanguage, name) {
+  function assignName(checkedLanguage, nameInput) {
   storeMap();
+  var name = nameInput.toLowerCase();
+
     if (name !== '' && checkedLanguage) {
       if (map[name] === undefined){
         map[name] = 0;
@@ -22,7 +24,6 @@ var map = {};
       }
     }
   console.log(map);
-
   }
 
   function returnMap() {
@@ -34,11 +35,11 @@ var map = {};
     return greetCount;
     }
 
-  function alert(name, checkedLanguage) {
-    if (!name && !checkedLanguage) {
+  function alert(nameInput, checkedLanguage) {
+    if (!nameInput && !checkedLanguage) {
       return "Please enter your name and select a language!"
     }
-    else if (name === "") {
+    else if (nameInput === "") {
         return "Please enter your name!"
 //change return string response. This one is for testing purposes.
     }
@@ -51,7 +52,7 @@ var map = {};
     }
     }
 
-  function greetPerson(checkedLanguage, name) {
+  function greetPerson(checkedLanguage, nameInput) {
     var greet = ''
       if (checkedLanguage === "english") {
         greet = "Hello ";
@@ -62,8 +63,8 @@ var map = {};
       if (checkedLanguage === "french") {
         greet = "Bonjour ";
       }
-      if (checkedLanguage && name) {
-        return greet + name;
+      if (checkedLanguage && nameInput) {
+        return greet + nameInput;
       }
       else {
         return "";
