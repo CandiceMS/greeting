@@ -27,7 +27,12 @@ function greetDom() {
   localStorage.setItem("localMap",JSON.stringify(holdMap));
 }
 
-var holdMap  = localStorage.getItem('localMap') ? JSON.parse(localStorage.getItem('localMap')):{};
+//var holdMap  = localStorage.getItem('localMap') ? JSON.parse(localStorage.getItem('localMap')):{};
+// Note: Line above and line below does the same thing.
+var holdMap = JSON.parse(localStorage.getItem('localMap'));
+  if (holdMap === undefined || null) {
+    holdMap = {};
+  }
 var greetings = Greetings(holdMap);
 
   greetings.storeMap();
@@ -36,6 +41,7 @@ var greetings = Greetings(holdMap);
 function resetCount() {
   localStorage.clear();
   location.reload();
+  // Note: Line above and lines below does the same thing.
   // countNames.innerHTML = "";
   // greetMeDisplay.innerHTML = "";
 }
